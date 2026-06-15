@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Score Dashboard — ASVAB Companion</title>
+  <meta name="description" content="Track your ASVAB study progress with AFQT history, subtest averages, and branch eligibility tracking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-brand"><span class="icon">🎖️</span> ASVAB Companion</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../exam/index.html">Exam</a>
+      <a href="../cat/index.html">CAT-ASVAB</a>
+      <a href="../practice/index.html">Practice</a>
+      <a href="../cheatsheet/index.html">Cheat Sheet</a>
+      <a href="../flashcards/index.html">Flashcards</a>
+      <a href="index.html" class="active">Scores</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding:3rem 0 2rem">
+  <div class="container">
+    <div class="badge">Progress Tracking</div>
+    <h1>Score Dashboard</h1>
+    <p class="subtitle">Track your improvement over time — AFQT trends, subtest averages, and test history.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container" id="dashboard-content">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <span class="footer-brand">ArcLight Press</span>
+    <p>&copy; 2026 Eric Tomchik. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../data/questions.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/scores.js"></script>
+</body>
+</html>
