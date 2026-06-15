@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT-ASVAB Simulator — ASVAB Companion</title>
+  <meta name="description" content="Adaptive CAT-ASVAB simulator that adjusts question difficulty based on your answers, simulating the real computer adaptive test.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-brand"><span class="icon">🎖️</span> ASVAB Companion</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../exam/index.html">Exam</a>
+      <a href="index.html" class="active">CAT-ASVAB</a>
+      <a href="../practice/index.html">Practice</a>
+      <a href="../cheatsheet/index.html">Cheat Sheet</a>
+      <a href="../flashcards/index.html">Flashcards</a>
+      <a href="../scores/index.html">Scores</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SETUP -->
+<div id="cat-setup">
+  <section class="hero" style="padding:3rem 0 2rem">
+    <div class="container">
+      <div class="badge">Adaptive Test</div>
+      <h1>CAT-ASVAB Simulator</h1>
+      <p class="subtitle">Computer Adaptive Test — questions get harder when you answer correctly and easier when you don't, just like the real ASVAB.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="setup-card">
+        <h2>How CAT-ASVAB Works</h2>
+        <div style="margin-bottom:1.5rem">
+          <div class="fact-item" style="margin-bottom:.75rem">
+            <strong>⚡ Adaptive Difficulty</strong>
+            Questions start at medium difficulty. Get one right → next question is harder. Get one wrong → next is easier. Your final score reflects the difficulty you reached.
+          </div>
+          <div class="fact-item" style="margin-bottom:.75rem">
+            <strong>🚫 No Going Back</strong>
+            Just like the real CAT-ASVAB, once you answer a question, you cannot change it or go back.
+          </div>
+          <div class="fact-item" style="margin-bottom:.75rem">
+            <strong>⏱️ Timed Per Subtest</strong>
+            Each subtest has its own time limit. If time runs out, you move to the next subtest automatically.
+          </div>
+          <div class="fact-item">
+            <strong>📊 Instant Feedback</strong>
+            See if you got each question right immediately, with detailed explanations.
+          </div>
+        </div>
+        <div style="text-align:center">
+          <button class="btn btn-primary btn-lg" id="start-cat">⚡ Start CAT-ASVAB</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CAT AREA -->
+<div id="cat-area" class="hidden"></div>
+
+<footer class="footer">
+  <div class="container">
+    <span class="footer-brand">ArcLight Press</span>
+    <p>&copy; 2026 Eric Tomchik. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../data/questions.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/cat.js"></script>
+</body>
+</html>
