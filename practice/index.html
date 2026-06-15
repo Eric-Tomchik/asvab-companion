@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtest Practice — ASVAB Companion</title>
+  <meta name="description" content="Practice individual ASVAB subtests with easy, medium, and hard difficulty filters. Instant feedback and explanations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-brand"><span class="icon">🎖️</span> ASVAB Companion</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../exam/index.html">Exam</a>
+      <a href="../cat/index.html">CAT-ASVAB</a>
+      <a href="index.html" class="active">Practice</a>
+      <a href="../cheatsheet/index.html">Cheat Sheet</a>
+      <a href="../flashcards/index.html">Flashcards</a>
+      <a href="../scores/index.html">Scores</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SUBTEST SELECTOR -->
+<div id="subtest-selector">
+  <section class="hero" style="padding:3rem 0 2rem">
+    <div class="container">
+      <div class="badge">Practice Drills</div>
+      <h1>Subtest Practice</h1>
+      <p class="subtitle">Choose a subtest to drill. Filter by difficulty and get instant feedback on every question.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="subtest-grid">
+        <div class="subtest-card" data-sub="GS">
+          <span class="subtest-abbr">GS</span>
+          <div class="subtest-name">General Science</div>
+          <div class="subtest-info">50 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="AR">
+          <span class="subtest-abbr">AR</span>
+          <div class="subtest-name">Arithmetic Reasoning</div>
+          <div class="subtest-info">50 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="WK">
+          <span class="subtest-abbr">WK</span>
+          <div class="subtest-name">Word Knowledge</div>
+          <div class="subtest-info">50 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="PC">
+          <span class="subtest-abbr">PC</span>
+          <div class="subtest-name">Paragraph Comprehension</div>
+          <div class="subtest-info">30 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="MK">
+          <span class="subtest-abbr">MK</span>
+          <div class="subtest-name">Mathematics Knowledge</div>
+          <div class="subtest-info">50 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="EI">
+          <span class="subtest-abbr">EI</span>
+          <div class="subtest-name">Electronics Information</div>
+          <div class="subtest-info">50 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="AI">
+          <span class="subtest-abbr">AI</span>
+          <div class="subtest-name">Auto Information</div>
+          <div class="subtest-info">30 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="SI">
+          <span class="subtest-abbr">SI</span>
+          <div class="subtest-name">Shop Information</div>
+          <div class="subtest-info">30 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="MC">
+          <span class="subtest-abbr">MC</span>
+          <div class="subtest-name">Mechanical Comprehension</div>
+          <div class="subtest-info">50 questions available</div>
+        </div>
+        <div class="subtest-card" data-sub="AO">
+          <span class="subtest-abbr">AO</span>
+          <div class="subtest-name">Assembling Objects</div>
+          <div class="subtest-info">40 questions available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PRACTICE AREA -->
+<div id="practice-area" class="hidden">
+  <section class="hero" style="padding:3rem 0 1.5rem" id="practice-header"></section>
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div style="margin-bottom:1rem">
+        <button class="btn btn-outline btn-sm" id="practice-back">← All Subtests</button>
+      </div>
+      <div id="practice-body"></div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <span class="footer-brand">ArcLight Press</span>
+    <p>&copy; 2026 Eric Tomchik. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../data/questions.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/practice.js"></script>
+</body>
+</html>

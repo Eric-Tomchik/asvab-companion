@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards — ASVAB Companion</title>
+  <meta name="description" content="120+ interactive flashcards for ASVAB study — math formulas, science facts, vocabulary words, and mechanical terms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-brand"><span class="icon">🎖️</span> ASVAB Companion</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../exam/index.html">Exam</a>
+      <a href="../cat/index.html">CAT-ASVAB</a>
+      <a href="../practice/index.html">Practice</a>
+      <a href="../cheatsheet/index.html">Cheat Sheet</a>
+      <a href="index.html" class="active">Flashcards</a>
+      <a href="../scores/index.html">Scores</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding:3rem 0 1rem">
+  <div class="container">
+    <div class="badge">Study Tool</div>
+    <h1>Flashcards</h1>
+    <p class="subtitle">Click to flip · Arrow keys to navigate · Press S to star</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="fc-modes" style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem">
+      <button class="fc-mode active tab" data-mode="all">📚 All</button>
+      <button class="fc-mode tab" data-mode="formulas">📐 Formulas</button>
+      <button class="fc-mode tab" data-mode="vocab">📖 Vocabulary</button>
+      <button class="fc-mode tab" data-mode="science">🔬 Science</button>
+      <button class="fc-mode tab" data-mode="starred">⭐ Starred (0)</button>
+    </div>
+
+    <div class="flashcard-container">
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-face">
+            <span id="fc-category" class="badge" style="position:absolute;top:1rem;left:1rem;font-size:.65rem"></span>
+            <div class="fc-term">Loading...</div>
+          </div>
+          <div class="flashcard-face flashcard-back">
+            <div class="fc-def">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flashcard-progress" style="max-width:500px;margin:.75rem auto">
+      <div class="flashcard-progress-fill" style="width:0%;height:3px;background:var(--accent);border-radius:3px;transition:width .3s"></div>
+    </div>
+
+    <div class="fc-controls" style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem">
+      <button class="btn btn-outline btn-sm" id="fc-prev">← Prev</button>
+      <span class="text-muted" id="fc-counter">0 / 0</span>
+      <button class="btn btn-outline btn-sm" id="fc-next">Next →</button>
+      <button class="btn btn-outline btn-sm" id="fc-shuffle">🔀 Shuffle</button>
+      <button class="btn btn-outline btn-sm" id="fc-star" style="font-size:1.2rem">☆</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <span class="footer-brand">ArcLight Press</span>
+    <p>&copy; 2026 Eric Tomchik. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../data/flashcards.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/flashcards.js"></script>
+</body>
+</html>

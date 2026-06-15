@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Exam Simulator — ASVAB Companion</title>
+  <meta name="description" content="Timed 135-question ASVAB practice exam covering all 10 CAT-ASVAB subtests with scoring and review.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-brand"><span class="icon">🎖️</span> ASVAB Companion</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html" class="active">Exam</a>
+      <a href="../cat/index.html">CAT-ASVAB</a>
+      <a href="../practice/index.html">Practice</a>
+      <a href="../cheatsheet/index.html">Cheat Sheet</a>
+      <a href="../flashcards/index.html">Flashcards</a>
+      <a href="../scores/index.html">Scores</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SETUP SCREEN -->
+<div id="exam-setup">
+  <section class="hero" style="padding:3rem 0 2rem">
+    <div class="container">
+      <div class="badge">Practice Exam</div>
+      <h1>Full Exam Simulator</h1>
+      <p class="subtitle">135 questions across 10 subtests — simulates the real CAT-ASVAB experience</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="setup-card">
+        <h2>Exam Settings</h2>
+
+        <h3 style="font-size:.9rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem">Timing Mode</h3>
+        <label class="setup-option selected">
+          <input type="radio" name="exam-mode" value="full" checked>
+          <div>
+            <div class="setup-label">⏱️ Timed (Recommended)</div>
+            <div class="setup-desc">Real time limits per subtest — simulates actual test conditions</div>
+          </div>
+        </label>
+        <label class="setup-option">
+          <input type="radio" name="exam-mode" value="untimed">
+          <div>
+            <div class="setup-label">♾️ Untimed</div>
+            <div class="setup-desc">No time pressure — take as long as you need</div>
+          </div>
+        </label>
+
+        <div style="margin-top:1.5rem">
+          <h3 style="font-size:.9rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem">Options</h3>
+          <div class="toggle-row">
+            <span class="toggle-label">No Going Back (like real test)</span>
+            <div class="toggle on" id="toggle-no-back"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;text-align:center">
+          <button class="btn btn-primary btn-lg" id="start-exam">🚀 Start Exam</button>
+        </div>
+
+        <div style="margin-top:1.5rem;padding:1rem;background:var(--bg-card2);border-radius:8px">
+          <p class="text-sm text-muted" style="margin:0;line-height:1.7">
+            <strong style="color:var(--accent)">Subtest order:</strong> GS (8 min) → AR (39 min) → WK (8 min) → PC (22 min) → MK (31 min) → EI (8 min) → AI (7 min) → SI (6 min) → MC (20 min) → AO (16 min)<br>
+            <strong style="color:var(--accent)">Total:</strong> ~135 questions · ~2 hrs 45 min
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- EXAM AREA (hidden until start) -->
+<div id="exam-area" class="hidden">
+  <div class="timer-bar">
+    <span id="subtest-label" class="subtest-label">—</span>
+    <span id="timer-value" class="timer">--:--</span>
+    <span id="exam-progress" class="progress-text">0/135 answered</span>
+  </div>
+
+  <div class="exam-body">
+    <div id="question-map" class="question-map"></div>
+
+    <div class="question-card">
+      <div class="question-number" id="question-number">Question 1 of 135</div>
+      <div class="question-text" id="question-text"></div>
+      <ul class="options" id="question-options"></ul>
+    </div>
+
+    <div class="exam-nav">
+      <button class="btn btn-outline" id="prev-btn" onclick="examPrev()">← Previous</button>
+      <button class="btn btn-primary" id="next-btn" onclick="examNext()">Next →</button>
+      <button class="btn btn-danger hidden" id="finish-btn" onclick="examFinish()">Finish Exam</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <span class="footer-brand">ArcLight Press</span>
+    <p>&copy; 2026 Eric Tomchik. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../data/questions.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/exam.js"></script>
+</body>
+</html>
