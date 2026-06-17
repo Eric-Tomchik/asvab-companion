@@ -171,6 +171,15 @@
     const numEl = document.getElementById('question-number');
     if (numEl) numEl.textContent = `Question ${state.current + 1} of ${state.questions.length}`;
 
+    // Passage / SVG context
+    const contextEl = document.getElementById('question-context');
+    if (contextEl) {
+      let ctx = '';
+      if (q.passage) ctx += `<div class="passage-box">${q.passage}</div>`;
+      if (q.svg) ctx += `<div class="ao-shape-box">${q.svg}</div>`;
+      contextEl.innerHTML = ctx;
+    }
+
     // Question text
     const textEl = document.getElementById('question-text');
     if (textEl) textEl.textContent = q.q;
@@ -446,8 +455,13 @@
       const correct = userAns === q.ans;
       const meta = window.SUBTEST_META[q.sub] || {};
 
+      let reviewCtx = '';
+      if (q.passage) reviewCtx += `<div class="passage-box">${q.passage}</div>`;
+      if (q.svg) reviewCtx += `<div class="ao-shape-box">${q.svg}</div>`;
+
       html += `<div class="question-card" style="border-left:3px solid var(--${correct ? 'green' : 'red'})">
         <div class="question-number">${q.sub} — ${meta.name || ''} · Question ${i + 1}</div>
+        ${reviewCtx}
         <div class="question-text">${q.q}</div>
         <ul class="options" style="pointer-events:none">`;
 

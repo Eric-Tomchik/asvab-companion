@@ -125,12 +125,18 @@
       </li>`;
     }).join('');
 
+    // Build passage/SVG context
+    let contextHTML = '';
+    if (q.passage) contextHTML += `<div class="passage-box">${q.passage}</div>`;
+    if (q.svg) contextHTML += `<div class="ao-shape-box">${q.svg}</div>`;
+
     body.innerHTML = `
       <div class="question-card">
         <div class="question-number" style="display:flex;justify-content:space-between">
           <span>Question ${state.current + 1} of ${state.questions.length}</span>
           <span style="color:var(--${diffColor});font-size:.7rem;padding:.2rem .5rem;border:1px solid var(--${diffColor});border-radius:4px">${diffLabel}</span>
         </div>
+        ${contextHTML}
         <div class="question-text">${q.q}</div>
         <ul class="options" id="practice-opts">${optionsHTML}</ul>
         ${isRevealed && q.exp ? `<div class="explanation"><strong>${userAns === q.ans ? '✅ Correct!' : '❌ Incorrect.'}</strong> ${q.exp}</div>` : ''}
