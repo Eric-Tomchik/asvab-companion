@@ -157,6 +157,15 @@
     const timerBar = document.getElementById('cat-timer-bar');
     const timerHTML = timerBar ? timerBar.outerHTML : '';
 
+    // Build passage/SVG section
+    let contextHTML = '';
+    if (q.passage) {
+      contextHTML = `<div class="passage-box">${q.passage}</div>`;
+    }
+    if (q.svg) {
+      contextHTML += `<div class="ao-shape-box">${q.svg}</div>`;
+    }
+
     area.innerHTML = `${timerHTML}
       <div class="exam-body">
         <div class="question-card">
@@ -164,6 +173,7 @@
             <span>Question ${state.subtestIndex + 1} of ${needed}</span>
             <span style="color:var(--${diffColor});font-size:.7rem;padding:.2rem .5rem;border:1px solid var(--${diffColor});border-radius:4px">${diffLabel}</span>
           </div>
+          ${contextHTML}
           <div class="question-text">${q.q}</div>
           <ul class="options" id="cat-options">
             ${q.opts.map((opt, i) => `
